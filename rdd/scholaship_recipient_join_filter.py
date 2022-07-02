@@ -38,6 +38,8 @@ if __name__ == '__main__':
         .map(lambda line: line.split(",")) \
         .map(lambda lst: (int(lst[0]), (int(lst[1]), strtobool(lst[2]), lst[3], lst[4], strtobool(lst[5]), strtobool(lst[6]), int(lst[7]))))
 
+    demographics_pair_rdd.foreach(print)
+
     finances_pair_rdd = finances_rdd \
         .map(lambda line: line.split(",")) \
         .map(lambda lst: (int(lst[0]), (strtobool(lst[1]), strtobool(lst[2]), strtobool(lst[3]), int(lst[4]))))
